@@ -1,39 +1,63 @@
-# 🎬 IMDB Sentiment Analysis (RNN, LSTM, GRU)
+# 🎬 IMDB Sentiment Analysis using RNN, LSTM and GRU
 
-## 🧠 Overview
-This project performs sentiment analysis on IMDB movie reviews using Deep Learning models like RNN, LSTM, and GRU. The model classifies reviews as **positive** or **negative**.
+## 📌 Project Overview
+
+This project performs sentiment analysis on IMDB movie reviews using deep learning techniques.
+
+The goal is to classify movie reviews into two categories:
+
+- **Positive**
+- **Negative**
+
+The project demonstrates the complete NLP and deep learning workflow, including text cleaning, tokenization, sequence padding, train-test splitting, and building recurrent neural network models using TensorFlow and Keras.
 
 ---
 
 ## 🎯 Objectives
-- Clean and preprocess text data  
-- Convert text into sequences  
-- Apply padding  
-- Train deep learning models (RNN, LSTM, GRU)  
-- Evaluate performance  
+
+- Load and explore the IMDB movie review dataset
+- Clean and preprocess text data
+- Convert text into numerical sequences
+- Apply sequence padding
+- Train deep learning models using RNN, LSTM, and GRU architectures
+- Evaluate model performance on unseen test data
 
 ---
 
-## 📁 Dataset
-Dataset used: IMDB Dataset  
-Contains:
-- review → text data  
-- sentiment → positive / negative  
+## 📂 Dataset
+
+The project uses an IMDB movie review dataset containing movie reviews and their corresponding sentiment labels.
+
+### Dataset Features
+
+| Feature | Description |
+|---|---|
+| `review` | Text content of the movie review |
+| `sentiment` | Sentiment label: positive or negative |
+
+### Dataset Size
+
+- **Total Records:** 35,631
+- **Total Columns:** 2
+
+### Target Labels
+
+- `positive` → 1
+- `negative` → 0
 
 ---
 
-## ⚙️ Tech Stack
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
-- TensorFlow / Keras  
+## ⚙️ Workflow
 
----
+### 1️⃣ Data Loading
 
-## 🔄 Steps
+The dataset is loaded using Pandas.
 
-### 1. Load Data
 ```python
-import pandas as pd
-data = pd.read_csv('IMDB Dataset.csv')
+data = pd.read_csv(
+    '/content/IMDB Dataset.csv',
+    sep=',',
+    on_bad_lines='skip',
+    engine='python',
+    quotechar='"'
+)
